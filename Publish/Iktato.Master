@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Iktato.master.cs" Inherits="iktató.Iktato" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <title>Iktató</title>
+    <style type="text/css">
+        </style>
+    <link href="Site.css" rel="stylesheet" type="text/css" />
+    
+
+</head>
+<body>
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <form id="form1" runat="server">
+        <header>
+            <div class="content-wrapper">
+                <p class="site-title">
+                    <a runat="server" href="Main_Page.aspx">Iktató rendszer</a>&nbsp;&nbsp;
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+                </p>
+            </div>
+        </header>
+        <header>
+      <asp:Menu ID="Menu1" runat="server" class="no-print"
+            BackColor = "#B5C7DE"
+            Font-Names="Verdana" Font-Size="0.9em" ForeColor="#284E98" Orientation="Horizontal" RenderingMode="Table" StaticSubMenuIndent="10px" Width="50%" DynamicHorizontalOffset="10" Font-Bold="True">
+            <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#B5C7DE" />
+            <DynamicSelectedStyle BackColor="#507CD1" />
+            <Items>
+                <asp:MenuItem Text="Levelezés" Value="Levelezés">
+                    <asp:MenuItem Text="Feltöltés" Value="Feltöltés" NavigateUrl="~/Feltoltesek/Mail_Upload.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Keresés" Value="Keresés" NavigateUrl="~/Keresesek/Mail_Search.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                
+				<asp:MenuItem Text="Eljárások" Value="Eljárások">
+                    <asp:MenuItem Text="Feltöltés" Value="Feltöltés" NavigateUrl="~/Feltoltesek/Proceeding_Upload.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Keresés" Value="Keresés" NavigateUrl="~/Keresesek/Proceeding_Search.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Könyvtár Hozzáadás" Value="Könyvtár Hozzáadás" NavigateUrl="~/Feltoltesek/Proceeding_Library.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Könyvtár Keresés" Value="Könyvtár Keresés" NavigateUrl="~/Keresesek/Proceeding_LibrarySearch.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                
+				<asp:MenuItem Text="Szerződések" Value="Szerződések">
+                    <asp:MenuItem Text="Feltöltés" Value="Feltöltés" NavigateUrl="~/Feltoltesek/Contract_Upload.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Keresés" Value="Keresés" NavigateUrl="~/Keresesek/Contract_Search.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                
+				<asp:MenuItem Text="Ajánlatok" Value="Ajánlatok">
+                    <asp:MenuItem Text="Feltöltés" Value="Feltöltés" NavigateUrl="~/Feltoltesek/Tender_Upload.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Keresés" Value="Keresés" NavigateUrl="~/Keresesek/Tender_Search.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                <asp:MenuItem Text="Adminisztráció" Value="Adminisztráció">
+                    <asp:MenuItem Text="Ügyintézők kezelése" Value="Ügyintézők kezelése" NavigateUrl="~/Adminisztracio/Ugyintezok.aspx"></asp:MenuItem>
+                </asp:MenuItem>
+            </Items>
+            <StaticHoverStyle BackColor="#284E98" ForeColor="White" CssClass="no-print" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" CssClass="no-print" />
+            <StaticMenuStyle CssClass="no-print" />
+            <StaticSelectedStyle BackColor="#507CD1" CssClass="no-print" />
+        </asp:Menu>
+            <br />
+            <br />
+            <br />
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
